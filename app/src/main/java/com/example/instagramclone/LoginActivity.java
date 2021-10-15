@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class LoginActivity extends AppCompatActivity
 {
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity
     private EditText etUsername;
     private EditText etPassword;
     private Button btnLogin;
+    private Button btnSignup;
     Dialog dialog;
 
     @Override
@@ -40,6 +42,7 @@ public class LoginActivity extends AppCompatActivity
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
+        btnSignup = findViewById(R.id.btnSignup);
 
         // Dialog screen when user enters the wrong password
         dialog = new Dialog(LoginActivity.this);
@@ -79,6 +82,43 @@ public class LoginActivity extends AppCompatActivity
                 loginUser(username, password);
             }
         });
+
+        btnSignup.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                // Create the ParseUser
+                ParseUser user = new ParseUser();
+                // Set core properties
+                user.setUsername(etUsername.getText().toString());
+                user.setPassword(etPassword.getText().toString());
+                // Invoke signUpInBackground
+                user.signUpInBackground(new SignUpCallback()
+                {
+                    public void done(ParseException e)
+                    {
+                        if (e == null)
+                        {
+                            // Hooray! Let them use the app now.
+                            Toast.makeText(LoginActivity.this, "Signup Successful!", Toast.LENGTH_SHORT).show();
+                            goMainActivity();
+                        }
+                        else
+                        {
+                            // Sign up didn't succeed. Look at the ParseException
+                            // to figure out what went wrong
+                            Toast.makeText(LoginActivity.this, "Signup Unsuccessful!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+            }
+        });
+
+
+
+
     }
 
     private void loginUser(String username, String password)
@@ -110,4 +150,8 @@ public class LoginActivity extends AppCompatActivity
         startActivity(i);
         finish();
     }
+
+
+
+
 }
