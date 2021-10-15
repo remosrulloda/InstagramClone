@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity
     private ImageView ivPostImage;
     private Button btnSubmit;
     private EditText etDescription;
+    private ImageButton userBtn;
 
 
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity
         ivPostImage = findViewById(R.id.ivPostImage);
         btnSubmit = findViewById(R.id.btnSubmit);
         etDescription = findViewById(R.id.etDescription);
+        userBtn = findViewById(R.id.userBtn);
 
         btnSubmit.setOnClickListener(new View.OnClickListener()
         {
@@ -87,6 +89,19 @@ public class MainActivity extends AppCompatActivity
             }
 
         });
+
+        userBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                ParseUser.logOut();
+                ParseUser currentUser = ParseUser.getCurrentUser(); // this will now be null
+                goLoginActivity();
+            }
+        });
+
+
 
 //        queryPosts();
 
@@ -123,14 +138,17 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data)
     {
-        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
+        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE)
+        {
+            if (resultCode == RESULT_OK)
+            {
                 // by this point we have the camera photo on disk
                 Bitmap takenImage = BitmapFactory.decodeFile(photoFile.getAbsolutePath());
                 // RESIZE BITMAP, see section below
                 // Load the taken image into a preview
                 ivPostImage.setImageBitmap(takenImage);
-            } else { // Result was a failure
+            } else
+            { // Result was a failure
                 Toast.makeText(this, "Picture wasn't taken!", Toast.LENGTH_SHORT).show();
             }
         }
@@ -201,6 +219,12 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+    private void goLoginActivity()
+    {
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+        finish();
+    }
 
 
 }
