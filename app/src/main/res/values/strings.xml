@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">InstagramClone</string>
+    <string name="login">Log In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="password">password</string>
+    <string name="igLogo">Instagram Logo</string>
+    <string name="username">username</string>
+    <string name="errorMsg">
+        Sorry, your password was incorrect.\nPlease double-check your password.
+    </string>
+    <string name="error">Error</string>
+    <string name="retry">Retry</string>
+    <string name="todo">TODO</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="caption">Caption...</string>
+    <string name="submit">Submit</string>
+</resources>

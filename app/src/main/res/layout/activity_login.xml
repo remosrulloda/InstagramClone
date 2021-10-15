@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="378dp"
+        android:layout_height="48dp"
+        android:background="@drawable/custom_input"
+        android:hint="@string/username"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        android:textColorHint="#8E8E8E"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321"
+        app:layout_constraintWidth_percent=".8"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="378dp"
+        android:layout_height="48dp"
+        android:background="@drawable/custom_input"
+        android:hint="@string/password"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
+        android:textColorHint="#8E8E8E"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUsername"
+        app:layout_constraintVertical_bias="0.039"
+        app:layout_constraintWidth_percent=".8"
+        tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="378dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#0095F6"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        app:layout_constraintVertical_bias="0.065"
+        app:layout_constraintWidth_percent=".8"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="378dp"
+        android:layout_height="48dp"
+        android:backgroundTint="#4EC43A"
+        android:text="@string/signUp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintWidth_percent=".8"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageView
+        android:id="@+id/igLogo"
+        android:layout_width="256dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="@string/igLogo"
+        app:layout_constraintBottom_toTopOf="@+id/etUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/nav_logo_whiteout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
