@@ -3,8 +3,9 @@
 
     <item android:state_pressed="true"
         android:drawable="@drawable/instagram_new_post_filled_24" /> <!-- pressed -->
-    <item android:state_focused="true"
-        android:drawable="@drawable/instagram_new_post_filled_24" /> <!-- focused -->
-    <item android:drawable="@drawable/instagram_new_post_outline_24" /> <!-- default -->
+
+    <item android:state_checked="true" android:drawable="@drawable/instagram_new_post_filled_24"/>
+    <item android:state_checked="false" android:drawable="@drawable/instagram_new_post_outline_24" />
+
 
 </selector>
